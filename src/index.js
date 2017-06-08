@@ -1,9 +1,4 @@
-import ExperimentRandom from './ExperimentRandom';
-import ExperimentUniqueId from './ExperimentUniqueId';
-import ExperimentValueGroup from './ExperimentValueGroup';
-
-export {
-  ExperimentRandom,
-  ExperimentUniqueId,
-  ExperimentValueGroup,
-};
+export ExperimentRandom from './ExperimentRandom';
+export ExperimentRandomWeighed from './ExperimentRandomWeighed';
+export ExperimentUniqueId from './ExperimentUniqueId';
+export ExperimentValueGroup from './ExperimentValueGroup';

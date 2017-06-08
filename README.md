@@ -13,7 +13,7 @@ Simple React AB test component
 Randomly renders a variant.
 
 ```js
-import { ExperimentUniqueId } from 'react-abtest';
+import { ExperimentRandom } from 'react-abtest';
 
 const A = <div>A variant</div>;
 const B = <div>B variant</div>;
@@ -21,6 +21,24 @@ const C = <div>C variant</div>;
 
 const ExampleTest = () => {
   return <ExperimentRandom variants={[A, B, C]} />
+}
+
+export default ExampleTest;
+```
+
+### ExperimentRandomWeighed
+
+Randomly renders a variant based on weight.
+
+```js
+import { ExperimentRandomWeighed } from 'react-abtest';
+
+const A = <div>A variant</div>;
+const B = <div>B variant</div>;
+const C = <div>C variant</div>;
+
+const ExampleTest = () => {
+  return <ExperimentRandomWeighed weights={[0.1, 0.1, 0.8]} variants={[A, B, C]} />
 }
 
 export default ExampleTest;
