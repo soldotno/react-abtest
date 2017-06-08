@@ -1,0 +1,33 @@
+{
+  "name": "react-abtest",
+  "version": "1.0.0",
+  "description": "Simple React AB test component",
+  "main": "dist/index.js",
+  "scripts": {
+    "compile": "babel --presets es2015,stage-0,react -d dist/ src/",
+    "prepublish": "npm run compile"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/soldotno/react-abtest.git"
+  },
+  "bugs": {
+    "url": "https://github.com/soldotno/react-abtest/issues"
+  },
+  "homepage": "https://github.com/soldotno/react-abtest#readme",
+  "authors": [
+    "Lars Jansøn Engvik"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "babel-cli": "6.24.1",
+    "babel-preset-es2015": "6.24.1",
+    "babel-preset-react": "6.24.1",
+    "babel-preset-stage-0": "6.24.1"
+  },
+  "dependencies": {
+    "prop-types": "15.5.10",
+    "react": "15.5.4",
+    "react-dom": "15.5.4"
+  }
+}
