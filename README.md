@@ -62,6 +62,31 @@ const ExampleTest = ({ uid }) => {
 export default ExampleTest;
 ```
 
+### ExperimentUniqueIdWeighed
+
+Renders the same variant based on weight, a unique identifier* and experiment name.
+
+* Should be of some length, even though the library support one char id's. Short id's will result in worse distribution.
+
+```js
+import { ExperimentUniqueIdWeighed } from 'react-abtest';
+
+const A = <div>A variant</div>;
+const B = <div>B variant</div>;
+const C = <div>C variant</div>;
+
+const ExampleTest = ({ uid }) => {
+  return <ExperimentUniqueIdWeighed
+            experimentName={'sample-experiment'}
+            uid={uid}
+            weights={[0.1, 0.1, 0.8]}
+            variants={[A, B, C]}
+          />
+}
+
+export default ExampleTest;
+```
+
 ### ExperimentValueGroup
 
 When you already have assigned the users to a group (number), for example in a cookie.
