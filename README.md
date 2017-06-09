@@ -66,7 +66,7 @@ export default ExampleTest;
 
 Renders the same variant based on weight, a unique identifier* and experiment name.
 
-* Should be of some length, even though the library support one char id's. Short id's will result in worse distribution.
+* Should be of some length, even though the library support one char id's. Short id's may result in uneven distribution.
 
 ```js
 import { ExperimentUniqueIdWeighed } from 'react-abtest';
