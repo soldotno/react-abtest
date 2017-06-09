@@ -1,6 +1,6 @@
 {
   "name": "react-abtest",
-  "version": "1.2.0",
+  "version": "2.0.0",
   "description": "Simple React AB test component",
   "main": "dist/index.js",
   "scripts": {
@@ -29,5 +29,12 @@
     "prop-types": "15.5.10",
     "react": "15.5.4",
     "react-dom": "15.5.4"
-  }
+  },
+  "keywords": [
+    "react",
+    "ab",
+    "ab-test",
+    "ab test",
+    "test"
+  ]
 }
