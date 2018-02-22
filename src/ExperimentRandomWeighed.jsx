@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { randomFloat, totalWeight, getWeighedIndex } from './utils';
 
-const ExperimentRandomWeighed = ({ weights, variants }) => {
+const ExperimentRandomWeighed = ({ weights, variants, logger }) => {
   if (variants.length === 0 || weights.length === 0) {
     return null;
   }
@@ -15,6 +15,10 @@ const ExperimentRandomWeighed = ({ weights, variants }) => {
   const random = randomFloat(0, totWeight);
   const variant = getWeighedIndex(random, weights);
   const VariantComponent = variant ? variants[variant] : null;
+
+  if (logger && typeof logger === 'function') {
+    logger(variant);
+  }
 
   return VariantComponent ? <VariantComponent /> : null;
 }
