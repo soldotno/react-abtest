@@ -1,6 +1,6 @@
 # react-abtest
 
-Simple React AB test component
+A simple React and React Native AB test component.
 
 ## Install
 
