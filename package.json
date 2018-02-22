@@ -1,7 +1,7 @@
 {
   "name": "react-abtest",
-  "version": "2.0.0",
-  "description": "Simple React AB test component",
+  "version": "3.0.0",
+  "description": "A simple React and React Native AB test component.",
   "main": "dist/index.js",
   "scripts": {
     "compile": "babel --presets env,stage-0,react -d dist/ src/",

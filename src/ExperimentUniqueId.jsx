@@ -3,7 +3,7 @@ import React from 'react';
 
 import { createHash } from './utils';
 
-const ExperimentUniqueId = ({ experimentName, uid, variants}) => {
+const ExperimentUniqueId = ({ experimentName, uid, variants, logger }) => {
   if (variants.length === 0) {
     return null;
   }
@@ -12,13 +12,18 @@ const ExperimentUniqueId = ({ experimentName, uid, variants}) => {
   const variant = hash % variants.length;
   const VariantComponent = variants[variant];
 
-  return <VariantComponent />;
+  if (logger && typeof logger === 'function') {
+    logger(variant);
+  }
+
+  return VariantComponent;
 };
 
 ExperimentUniqueId.propTypes = {
   experimentName: PropTypes.string.isRequired,
   uid: PropTypes.string.isRequired,
   variants: PropTypes.array.isRequired,
+  logger: PropTypes.func,
 };
 
 export default ExperimentUniqueId;

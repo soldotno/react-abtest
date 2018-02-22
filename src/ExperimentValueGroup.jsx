@@ -1,13 +1,18 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-const ExperimentValueGroup = ({ userGroup, variants }) => {
+const ExperimentValueGroup = ({ userGroup, variants, logger }) => {
   let VariantComponent = null;
 
-  variants.some((variant) => {
+  variants.some((variant, i) => {
     if (typeof variant.group === 'number') {
       if (variant.group === userGroup) {
         VariantComponent = variant.component;
+
+        if (logger && typeof logger === 'function') {
+          logger(i);
+        }
+
         return true;
       }
     }
@@ -17,6 +22,11 @@ const ExperimentValueGroup = ({ userGroup, variants }) => {
 
       if (userGroup >= range[0] && userGroup <= range[1]) {
         VariantComponent = variant.component;
+
+        if (logger && typeof logger === 'function') {
+          logger(i);
+        }
+
         return true;
       }
     }
@@ -24,12 +34,13 @@ const ExperimentValueGroup = ({ userGroup, variants }) => {
     return false;
   });
 
-  return VariantComponent ? <VariantComponent /> : null;
+  return VariantComponent || null;
 }
 
 ExperimentValueGroup.propTypes = {
   userGroup: PropTypes.number.isRequired,
   variants: PropTypes.array.isRequired,
+  logger: PropTypes.func,
 };
 
 export default ExperimentValueGroup;

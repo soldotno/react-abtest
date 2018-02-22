@@ -3,7 +3,7 @@ import React from 'react';
 
 import { createHash, totalWeight, getWeighedIndex, customRange } from './utils';
 
-const ExperimentUniqueIdWeighed = ({ experimentName, uid, weights, variants}) => {
+const ExperimentUniqueIdWeighed = ({ experimentName, uid, weights, variants, logger }) => {
   if (variants.length === 0) {
     return null;
   }
@@ -15,7 +15,11 @@ const ExperimentUniqueIdWeighed = ({ experimentName, uid, weights, variants}) =>
   const variant = getWeighedIndex(weights, rangeVal);
   const VariantComponent = variant ? variants[variant] : null;
 
-  return VariantComponent ? <VariantComponent /> : null;
+  if (logger && typeof logger === 'function') {
+    logger(variant);
+  }
+
+  return VariantComponent || null;
 };
 
 ExperimentUniqueIdWeighed.propTypes = {
@@ -23,6 +27,7 @@ ExperimentUniqueIdWeighed.propTypes = {
   uid: PropTypes.string.isRequired,
   weights: PropTypes.array.isRequired,
   variants: PropTypes.array.isRequired,
+  logger: PropTypes.func,
 };
 
 export default ExperimentUniqueIdWeighed;

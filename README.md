@@ -1,6 +1,6 @@
 # react-abtest
 
-Simple React AB test component
+A simple React and React Native AB test component.
 
 ## Install
 
@@ -19,8 +19,16 @@ const A = <div>A variant</div>;
 const B = <div>B variant</div>;
 const C = <div>C variant</div>;
 
+// Optional, but useful for logging test data.
+const logger = (variant) => console.log(`User placed in group ${variant}.`);
+
 const ExampleTest = () => {
-  return <ExperimentRandom variants={[A, B, C]} />
+  return (
+    <ExperimentRandom
+      variants={[A, B, C]}
+      logger={logger}
+    />
+  );
 }
 
 export default ExampleTest;
@@ -37,8 +45,17 @@ const A = <div>A variant</div>;
 const B = <div>B variant</div>;
 const C = <div>C variant</div>;
 
+// Optional, but useful for logging test data.
+const logger = (variant) => console.log(`User placed in group ${variant}.`);
+
 const ExampleTest = () => {
-  return <ExperimentRandomWeighed weights={[0.1, 0.1, 0.8]} variants={[A, B, C]} />
+  return (
+    <ExperimentRandomWeighed
+      weights={[0.1, 0.1, 0.8]}
+      variants={[A, B, C]}
+      logger={logger}
+    />
+  );
 }
 
 export default ExampleTest;
@@ -55,8 +72,18 @@ const A = <div>A variant</div>;
 const B = <div>B variant</div>;
 const C = <div>C variant</div>;
 
+// Optional, but useful for logging test data.
+const logger = (variant) => console.log(`User placed in group ${variant}.`);
+
 const ExampleTest = ({ uid }) => {
-  return <ExperimentUniqueId experimentName={'sample-experiment'} uid={uid} variants={[A, B, C]} />
+  return (
+    <ExperimentUniqueId
+      experimentName={'sample-experiment'}
+      uid={uid}
+      variants={[A, B, C]}
+      logger={logger}
+    />
+  );
 }
 
 export default ExampleTest;
@@ -75,13 +102,19 @@ const A = <div>A variant</div>;
 const B = <div>B variant</div>;
 const C = <div>C variant</div>;
 
+// Optional, but useful for logging test data.
+const logger = (variant) => console.log(`User placed in group ${variant}.`);
+
 const ExampleTest = ({ uid }) => {
-  return <ExperimentUniqueIdWeighed
-            experimentName={'sample-experiment'}
-            uid={uid}
-            weights={[0.1, 0.1, 0.8]}
-            variants={[A, B, C]}
-          />
+  return (
+    <ExperimentUniqueIdWeighed
+      experimentName={'sample-experiment'}
+      uid={uid}
+      weights={[0.1, 0.1, 0.8]}
+      variants={[A, B, C]}
+      logger={logger}
+    />
+  );
 }
 
 export default ExampleTest;
@@ -117,10 +150,19 @@ const ExampleTest = () => {
     }
   ];
 
+  // Optional, but useful for logging test data.
+  const logger = (variant) => console.log(`User placed in group ${variant}.`);
+
   // userGroup = 1, would render A
   // userGroup = 33 would render B
   // userGroup = 51 would render C
-  return <ExperimentValueGroup userGroup={userGroup} variants={variants} />;
+  return (
+    <ExperimentValueGroup
+      userGroup={userGroup}
+      variants={variants}
+      logger={logger}
+    />
+  );
 }
 
 export default ExampleTest;
