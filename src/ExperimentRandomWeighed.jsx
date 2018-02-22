@@ -13,7 +13,7 @@ const ExperimentRandomWeighed = ({ weights, variants, logger }) => {
 
   const totWeight = totalWeight(weights);
   const random = randomFloat(0, totWeight);
-  const variant = getWeighedIndex(random, weights);
+  const variant = getWeighedIndex(weights, random);
   const VariantComponent = variant ? variants[variant] : null;
 
   if (logger && typeof logger === 'function') {
