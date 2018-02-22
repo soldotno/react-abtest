@@ -19,7 +19,7 @@ const ExperimentUniqueIdWeighed = ({ experimentName, uid, weights, variants, log
     logger(variant);
   }
 
-  return VariantComponent ? <VariantComponent /> : null;
+  return VariantComponent || null;
 };
 
 ExperimentUniqueIdWeighed.propTypes = {

@@ -16,7 +16,7 @@ const ExperimentUniqueId = ({ experimentName, uid, variants, logger }) => {
     logger(variant);
   }
 
-  return <VariantComponent />;
+  return VariantComponent;
 };
 
 ExperimentUniqueId.propTypes = {

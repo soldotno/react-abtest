@@ -34,7 +34,7 @@ const ExperimentValueGroup = ({ userGroup, variants, logger }) => {
     return false;
   });
 
-  return VariantComponent ? <VariantComponent /> : null;
+  return VariantComponent || null;
 }
 
 ExperimentValueGroup.propTypes = {

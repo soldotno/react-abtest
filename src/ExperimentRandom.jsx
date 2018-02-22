@@ -14,7 +14,7 @@ const ExperimentRandom = ({ variants, logger }) => {
     logger(random);
   }
 
-  return <VariantComponent />;
+  return VariantComponent;
 }
 
 ExperimentRandom.propTypes = {
