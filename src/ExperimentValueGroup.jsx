@@ -40,6 +40,7 @@ const ExperimentValueGroup = ({ userGroup, variants, logger }) => {
 ExperimentValueGroup.propTypes = {
   userGroup: PropTypes.number.isRequired,
   variants: PropTypes.array.isRequired,
+  logger: PropTypes.func,
 };
 
 export default ExperimentValueGroup;

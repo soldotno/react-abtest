@@ -26,6 +26,7 @@ const ExperimentRandomWeighed = ({ weights, variants, logger }) => {
 ExperimentRandomWeighed.propTypes = {
   weights: PropTypes.array.isRequired,
   variants: PropTypes.array.isRequired,
+  logger: PropTypes.func,
 };
 
 export default ExperimentRandomWeighed;

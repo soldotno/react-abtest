@@ -27,6 +27,7 @@ ExperimentUniqueIdWeighed.propTypes = {
   uid: PropTypes.string.isRequired,
   weights: PropTypes.array.isRequired,
   variants: PropTypes.array.isRequired,
+  logger: PropTypes.func,
 };
 
 export default ExperimentUniqueIdWeighed;

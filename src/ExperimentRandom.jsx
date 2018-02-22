@@ -19,6 +19,7 @@ const ExperimentRandom = ({ variants, logger }) => {
 
 ExperimentRandom.propTypes = {
   variants: PropTypes.array.isRequired,
+  logger: PropTypes.func,
 };
 
 export default ExperimentRandom;

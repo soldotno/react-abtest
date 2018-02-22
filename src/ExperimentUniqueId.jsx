@@ -23,6 +23,7 @@ ExperimentUniqueId.propTypes = {
   experimentName: PropTypes.string.isRequired,
   uid: PropTypes.string.isRequired,
   variants: PropTypes.array.isRequired,
+  logger: PropTypes.func,
 };
 
 export default ExperimentUniqueId;
