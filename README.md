@@ -4,6 +4,10 @@ A simple React and React Native AB test component.
 
 ## Install
 
+`yarn add react-abtest`
+
+or
+
 `npm install react-abtest`
 
 ## Usage
