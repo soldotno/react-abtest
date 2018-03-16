@@ -16,11 +16,11 @@ const ExperimentRandomWeighed = ({ weights, variants, logger }) => {
   const variant = getWeighedIndex(weights, random);
   const VariantComponent = variant ? variants[variant] : null;
 
-  if (logger && typeof logger === 'function') {
+  if (VariantComponent && logger && typeof logger === 'function') {
     logger(variant);
   }
 
-  return VariantComponent ? <VariantComponent /> : null;
+  return VariantComponent;
 }
 
 ExperimentRandomWeighed.propTypes = {
