@@ -13,7 +13,7 @@ const ExperimentUniqueIdWeighed = ({ experimentName, uid, weights, variants, log
   const hashFloat = parseFloat(`0.${hash}`);
   const rangeVal = customRange(hashFloat, 0.0, totWeight);
   const variant = getWeighedIndex(weights, rangeVal);
-  const VariantComponent = variant ? variants[variant] : null;
+  const VariantComponent = variants[variant];
 
   if (VariantComponent && logger && typeof logger === 'function') {
     logger(variant);
