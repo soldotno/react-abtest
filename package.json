@@ -5,7 +5,7 @@
   "main": "dist/index.js",
   "scripts": {
     "compile": "babel --presets env,stage-0,react -d dist/ src/",
-    "prepublish": "npm run compile"
+    "prepare": "npm run compile"
   },
   "repository": {
     "type": "git",
