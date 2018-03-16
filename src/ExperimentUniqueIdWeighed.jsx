@@ -15,11 +15,11 @@ const ExperimentUniqueIdWeighed = ({ experimentName, uid, weights, variants, log
   const variant = getWeighedIndex(weights, rangeVal);
   const VariantComponent = variant ? variants[variant] : null;
 
-  if (logger && typeof logger === 'function') {
+  if (VariantComponent && logger && typeof logger === 'function') {
     logger(variant);
   }
 
-  return VariantComponent || null;
+  return VariantComponent;
 };
 
 ExperimentUniqueIdWeighed.propTypes = {
