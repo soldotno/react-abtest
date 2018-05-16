@@ -76,11 +76,12 @@ import { ExperimentRandomWeighedVariable } from 'react-abtest';
 const logger = (variant) => console.log(`User placed in group ${variant}.`);
 
 const ExampleTest = () => {
-  return (
-    <ExperimentRandomWeighed
-      weights={[0.1, 0.1, 0.8]}
-      logger={logger}
-    />
+  const options = {
+    weights: [0.2, 0.8],
+    logger,
+  };
+
+  return ExperimentRandomWeighedVariable(options);
   );
 }
 
