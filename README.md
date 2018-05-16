@@ -124,6 +124,31 @@ const ExampleTest = ({ uid }) => {
 export default ExampleTest;
 ```
 
+### ExperimentUniqueIdWeighedVariable
+
+Returns a group number 0 -> x based on weight, a unique identifier* and experiment name are requierd.
+
+* Should be of some length, even though the library support one char id's. Short id's may result in uneven distribution.
+
+```js
+import { ExperimentUniqueIdWeighedVariable } from 'react-abtest';
+
+// Optional, but useful for logging test data.
+  const logger = (variant) => console.log(`User placed in group ${variant}.`);
+  const options = {
+    experimentName: 'experimentName',
+    uid,
+    weights: [0.2, 0.8],
+    logger,
+  };
+
+  return ExperimentUniqueIdWeighedVariable(options);
+
+}
+
+export default ExperimentUniqueIdWeighedVariable;
+```
+
 ### ExperimentValueGroup
 
 When you already have assigned the users to a group (number), for example in a cookie.
