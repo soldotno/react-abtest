@@ -65,6 +65,28 @@ const ExampleTest = () => {
 export default ExampleTest;
 ```
 
+### ExperimentRandomWeighedVariable
+
+Randomly returns a group based on weight.
+
+```js
+import { ExperimentRandomWeighedVariable } from 'react-abtest';
+
+// Optional, but useful for logging test data.
+const logger = (variant) => console.log(`User placed in group ${variant}.`);
+
+const ExampleTest = () => {
+  return (
+    <ExperimentRandomWeighed
+      weights={[0.1, 0.1, 0.8]}
+      logger={logger}
+    />
+  );
+}
+
+export default ExampleTest;
+```
+
 ### ExperimentUniqueId
 
 Renders the same variant based on a unique identifier and experiment name.
@@ -122,6 +144,31 @@ const ExampleTest = ({ uid }) => {
 }
 
 export default ExampleTest;
+```
+
+### ExperimentUniqueIdWeighedVariable
+
+Returns the same group number (0 -> x) based on weight, a unique identifier* and experiment name.
+
+* Should be of some length, even though the library support one char id's. Short id's may result in uneven distribution.
+
+```js
+import { ExperimentUniqueIdWeighedVariable } from 'react-abtest';
+  // Optional, but useful for logging test data.
+  const logger = (variant) => console.log(`User placed in group ${variant}.`);
+
+  const options = {
+    experimentName: 'experimentName',
+    uid,
+    weights: [0.2, 0.8],
+    logger,
+  };
+
+  return ExperimentUniqueIdWeighedVariable(options);
+
+}
+
+export default ExperimentUniqueIdWeighedVariable;
 ```
 
 ### ExperimentValueGroup
