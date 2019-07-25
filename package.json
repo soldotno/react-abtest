@@ -4,7 +4,7 @@
   "description": "A simple React and React Native AB test component.",
   "main": "dist/index.js",
   "scripts": {
-    "compile": "babel --presets env,stage-0,react -d dist/ src/",
+    "compile": "babel -d dist/ src/",
     "prepare": "npm run compile"
   },
   "repository": {
@@ -20,15 +20,16 @@
   ],
   "license": "MIT",
   "devDependencies": {
-    "babel-cli": "6.26.0",
-    "babel-preset-env": "1.7.0",
-    "babel-preset-react": "6.24.1",
-    "babel-preset-stage-0": "6.24.1"
+    "@babel/cli": "7.5.5",
+		"@babel/core": "7.5.5",
+    "@babel/plugin-syntax-dynamic-import": "7.2.0",
+    "@babel/preset-env": "7.5.5",
+    "@babel/preset-react": "7.0.0"
   },
   "dependencies": {
-    "prop-types": "15.6.2",
-    "react": "16.7.0",
-    "react-dom": "16.7.0"
+    "prop-types": "15.7.2",
+    "react": "16.8.6",
+    "react-dom": "16.8.6"
   },
   "keywords": [
     "react",
