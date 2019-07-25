@@ -12,7 +12,11 @@ or
 
 ## Usage
 
-### ExperimentRandom
+You can either automatically render a component based on the group placement or you can get the group the user is placed and choose how to handle it yourself.
+
+### Render a component
+
+#### ExperimentRandom
 
 Randomly renders a variant.
 
@@ -38,31 +42,7 @@ const ExampleTest = () => {
 export default ExampleTest;
 ```
 
-### experimentRandomGroup
-
-Randomly returns a group based on weight.
-Randomly returns a group.
-
-```js
-import { experimentRandomGroup } from 'react-abtest';
-
-// Optional, but useful for logging test data.
-const logger = (variant) => console.log(`User placed in group ${variant}.`);
-
-const ExampleTest = () => {
-  const options = {
-    groups: 5, // Number of groups to place users in
-    logger,
-  };
-
-  return experimentRandomGroup(options);
-  );
-}
-
-export default ExampleTest;
-```
-
-### ExperimentRandomWeighed
+#### ExperimentRandomWeighed
 
 Randomly renders a variant based on weight.
 
@@ -89,30 +69,7 @@ const ExampleTest = () => {
 export default ExampleTest;
 ```
 
-### experimentRandomWeighedGroup
-
-Randomly returns a group based on weight.
-
-```js
-import { experimentRandomWeighedGroup } from 'react-abtest';
-
-// Optional, but useful for logging test data.
-const logger = (variant) => console.log(`User placed in group ${variant}.`);
-
-const ExampleTest = () => {
-  const options = {
-    weights: [0.2, 0.8],
-    logger,
-  };
-
-  return experimentRandomWeighedGroup(options);
-  );
-}
-
-export default ExampleTest;
-```
-
-### ExperimentUniqueId
+#### ExperimentUniqueId
 
 Renders the same variant based on a unique identifier and experiment name.
 
@@ -140,7 +97,7 @@ const ExampleTest = ({ uid }) => {
 export default ExampleTest;
 ```
 
-### ExperimentUniqueIdWeighed
+#### ExperimentUniqueIdWeighed
 
 Renders the same variant based on weight, a unique identifier* and experiment name.
 
@@ -171,32 +128,7 @@ const ExampleTest = ({ uid }) => {
 export default ExampleTest;
 ```
 
-### experimentUniqueIdWeighedGroup
-
-Returns the same group number (0 -> x) based on weight, a unique identifier* and experiment name.
-
-* Should be of some length, even though the library support one char id's. Short id's may result in uneven distribution.
-
-```js
-import { experimentUniqueIdWeighedGroup } from 'react-abtest';
-  // Optional, but useful for logging test data.
-  const logger = (variant) => console.log(`User placed in group ${variant}.`);
-
-  const options = {
-    experimentName: 'experimentName',
-    uid,
-    weights: [0.2, 0.8],
-    logger,
-  };
-
-  return experimentUniqueIdWeighedGroup(options);
-
-}
-
-export default ExperimentUniqueIdWeighedVariable;
-```
-
-### ExperimentValueGroup
+#### ExperimentValueGroup
 
 When you already have assigned the users to a group (number), for example in a cookie.
 
@@ -242,4 +174,102 @@ const ExampleTest = () => {
 }
 
 export default ExampleTest;
+```
+
+### Place user in a group
+
+#### experimentRandomGroup
+
+Randomly returns a group.
+
+```js
+import { experimentRandomGroup } from 'react-abtest';
+
+// Optional, but useful for logging test data.
+const logger = (group) => console.log(`User placed in group ${group}.`);
+
+const ExampleTest = () => {
+  const options = {
+    groups: 5, // Number of groups to place users in
+    logger,
+  };
+
+  return experimentRandomGroup(options);
+  );
+}
+
+export default ExampleTest;
+```
+
+
+#### experimentRandomWeighedGroup
+
+Randomly returns a group based on weight.
+
+```js
+import { experimentRandomWeighedGroup } from 'react-abtest';
+
+// Optional, but useful for logging test data.
+const logger = (group) => console.log(`User placed in group ${group}.`);
+
+const ExampleTest = () => {
+  const options = {
+    weights: [0.2, 0.8],
+    logger,
+  };
+
+  return experimentRandomWeighedGroup(options);
+  );
+}
+
+export default ExampleTest;
+```
+
+#### experimentUniqueIdGroup
+
+Returns the same group based on a unique identifier and experiment name.
+
+```js
+import { experimentUniqueIdGroup } from 'react-abtest';
+
+
+const ExampleTest = ({ uid }) => {
+  // Optional, but useful for logging test data.
+  const logger = (group) => console.log(`User placed in group ${group}.`);
+
+  const options = {
+    experimentName: 'experimentName',
+    uid,
+    logger,
+  };
+
+  return experimentUniqueIdGroup(options);
+}
+
+export default ExampleTest;
+```
+
+#### experimentUniqueIdWeighedGroup
+
+Returns the same group number based on weight, a unique identifier* and experiment name.
+
+* Should be of some length, even though the library support one char id's. Short id's may result in uneven distribution.
+
+```js
+import { experimentUniqueIdWeighedGroup } from 'react-abtest';
+  // Optional, but useful for logging test data.
+  const logger = (group) => console.log(`User placed in group ${group}.`);
+
+  const options = {
+    experimentName: 'experimentName',
+    uid,
+    weights: [0.2, 0.8],
+    logger,
+  };
+
+  return experimentUniqueIdWeighedGroup(options);
+
+}
+
+export default ExperimentUniqueIdWeighedVariable;
 ```
