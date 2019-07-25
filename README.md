@@ -12,7 +12,7 @@ or
 
 ## Usage
 
-You can either automatically render a component based on the group placement or you can get the group the user is placed and choose how to handle it yourself.
+You can either automatically render a component based on the group placement or you can get the group the user is placed in and choose how to handle it yourself.
 
 ### Render a component
 
