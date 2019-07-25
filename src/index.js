@@ -1,17 +1,17 @@
 import ExperimentRandom from './ExperimentRandom';
 import ExperimentRandomWeighed from './ExperimentRandomWeighed';
-import ExperimentRandomWeighedVariable from './ExperimentRandomWeighedVariable'
+import experimentRandomWeighedGroup from './experimentRandomWeighedGroup';
 import ExperimentUniqueId from './ExperimentUniqueId';
 import ExperimentUniqueIdWeighed from './ExperimentUniqueIdWeighed';
-import ExperimentUniqueIdWeighedVariable from './ExperimentUniqueIdWeighedVariable'
+import experimentUniqueIdWeighedGroup from './experimentUniqueIdWeighedGroup';
 import ExperimentValueGroup from './ExperimentValueGroup';
 
 export {
   ExperimentRandom,
   ExperimentRandomWeighed,
-  ExperimentRandomWeighedVariable,
+  experimentRandomWeighedGroup,
   ExperimentUniqueId,
   ExperimentUniqueIdWeighed,
-  ExperimentUniqueIdWeighedVariable,
+  experimentUniqueIdWeighedGroup,
   ExperimentValueGroup,
 };

@@ -1,5 +1,6 @@
 import { randomFloat, totalWeight, getWeighedIndex } from './utils';
-const ExperimentRandomWeighedVariable = ({ weights, logger }) => {
+
+const experimentRandomWeighedGroup = ({ weights, logger }) => {
   if (weights.length === 0) {
     return null;
   }
@@ -15,4 +16,4 @@ const ExperimentRandomWeighedVariable = ({ weights, logger }) => {
   return variant;
 }
 
-export default ExperimentRandomWeighedVariable;
+export default experimentRandomWeighedGroup;
