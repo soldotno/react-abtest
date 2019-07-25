@@ -38,6 +38,30 @@ const ExampleTest = () => {
 export default ExampleTest;
 ```
 
+### experimentRandomGroup
+
+Randomly returns a group based on weight.
+Randomly returns a group.
+
+```js
+import { experimentRandomGroup } from 'react-abtest';
+
+// Optional, but useful for logging test data.
+const logger = (variant) => console.log(`User placed in group ${variant}.`);
+
+const ExampleTest = () => {
+  const options = {
+    groups: 5, // Number of groups to place users in
+    logger,
+  };
+
+  return experimentRandomGroup(options);
+  );
+}
+
+export default ExampleTest;
+```
+
 ### ExperimentRandomWeighed
 
 Randomly renders a variant based on weight.
@@ -65,12 +89,12 @@ const ExampleTest = () => {
 export default ExampleTest;
 ```
 
-### ExperimentRandomWeighedVariable
+### experimentRandomWeighedGroup
 
 Randomly returns a group based on weight.
 
 ```js
-import { ExperimentRandomWeighedVariable } from 'react-abtest';
+import { experimentRandomWeighedGroup } from 'react-abtest';
 
 // Optional, but useful for logging test data.
 const logger = (variant) => console.log(`User placed in group ${variant}.`);
@@ -81,7 +105,7 @@ const ExampleTest = () => {
     logger,
   };
 
-  return ExperimentRandomWeighedVariable(options);
+  return experimentRandomWeighedGroup(options);
   );
 }
 
@@ -147,14 +171,14 @@ const ExampleTest = ({ uid }) => {
 export default ExampleTest;
 ```
 
-### ExperimentUniqueIdWeighedVariable
+### experimentUniqueIdWeighedGroup
 
 Returns the same group number (0 -> x) based on weight, a unique identifier* and experiment name.
 
 * Should be of some length, even though the library support one char id's. Short id's may result in uneven distribution.
 
 ```js
-import { ExperimentUniqueIdWeighedVariable } from 'react-abtest';
+import { experimentUniqueIdWeighedGroup } from 'react-abtest';
   // Optional, but useful for logging test data.
   const logger = (variant) => console.log(`User placed in group ${variant}.`);
 
@@ -165,7 +189,7 @@ import { ExperimentUniqueIdWeighedVariable } from 'react-abtest';
     logger,
   };
 
-  return ExperimentUniqueIdWeighedVariable(options);
+  return experimentUniqueIdWeighedGroup(options);
 
 }
 
