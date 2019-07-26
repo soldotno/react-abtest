@@ -184,21 +184,19 @@ Randomly returns a group.
 
 ```js
 import { experimentRandomGroup } from 'react-abtest';
-
-// Optional, but useful for logging test data.
-const logger = (group) => console.log(`User placed in group ${group}.`);
-
-const ExampleTest = () => {
+const exampleTest = () => {
+  // Optional, but useful for logging test data.
+  const logger = (group) => console.log(`User placed in group ${group}.`);
+ 
   const options = {
     groups: 5, // Number of groups to place users in
     logger,
   };
 
   return experimentRandomGroup(options);
-  );
 }
 
-export default ExampleTest;
+export default exampleTest;
 ```
 
 
@@ -209,20 +207,19 @@ Randomly returns a group based on weight.
 ```js
 import { experimentRandomWeighedGroup } from 'react-abtest';
 
-// Optional, but useful for logging test data.
-const logger = (group) => console.log(`User placed in group ${group}.`);
+const exampleTest = () => {
+  // Optional, but useful for logging test data.
+  const logger = (group) => console.log(`User placed in group ${group}.`);
 
-const ExampleTest = () => {
   const options = {
     weights: [0.2, 0.8],
     logger,
   };
 
   return experimentRandomWeighedGroup(options);
-  );
 }
 
-export default ExampleTest;
+export default exampleTest;
 ```
 
 #### experimentUniqueIdGroup
@@ -232,8 +229,7 @@ Returns the same group based on a unique identifier and experiment name.
 ```js
 import { experimentUniqueIdGroup } from 'react-abtest';
 
-
-const ExampleTest = ({ uid }) => {
+const exampleTest = ({ uid }) => {
   // Optional, but useful for logging test data.
   const logger = (group) => console.log(`User placed in group ${group}.`);
 
@@ -246,7 +242,7 @@ const ExampleTest = ({ uid }) => {
   return experimentUniqueIdGroup(options);
 }
 
-export default ExampleTest;
+export default exampleTest;
 ```
 
 #### experimentUniqueIdWeighedGroup
@@ -257,6 +253,7 @@ Returns the same group number based on weight, a unique identifier* and experime
 
 ```js
 import { experimentUniqueIdWeighedGroup } from 'react-abtest';
+const exampleTest = ({ uid }) => {
   // Optional, but useful for logging test data.
   const logger = (group) => console.log(`User placed in group ${group}.`);
 
@@ -271,5 +268,5 @@ import { experimentUniqueIdWeighedGroup } from 'react-abtest';
 
 }
 
-export default ExperimentUniqueIdWeighedVariable;
+export default exampleTest;
 ```
